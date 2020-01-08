@@ -1,6 +1,0 @@
-test
-.nyc_output
-.jshintrc
-.travis.yml
-appveyor.yml
-webpack.config.js

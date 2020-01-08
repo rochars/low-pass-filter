@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="utf-8">
     <title>Home - Documentation</title>
-
+    
+    
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
@@ -11,6 +13,8 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -21,8 +25,9 @@
 
 <label for="nav-trigger" class="overlay"></label>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#lowPassFilter">lowPassFilter</a></li></ul>
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-low-pass-filter.html">low-pass-filter</a><ul class='methods'><li data-type='method'><a href="module-low-pass-filter.html#.lowPassFilter">lowPassFilter</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -35,6 +40,11 @@
     
 
 
+    <section class="package">
+        <h3> </h3>		
+    </section>
+
+
 
 
 
@@ -45,19 +55,48 @@
     
 
 
+
     <section class="readme">
-        <article><h1>low-pass-filter</h1><p>Copyright (c) 2018 Rafael da Silva Rocha.<br>MIT License.</p>
-<h2>About</h2><p>LPF. This is a audio FX.</p>
-<h2>Install</h2><pre class="prettyprint source"><code>npm install low-pass-filter</code></pre><h2>Use</h2><pre class="prettyprint source lang-javascript"><code>
+        <article><h1>low-pass-filter</h1>
+<p>A low pass filter.</p>
+<h2>Install</h2>
+<pre class="prettyprint source"><code>npm install low-pass-filter
+</code></pre>
+<h2>Use</h2>
+<h3>Browser</h3>
+<p>Use the <strong>low-pass-filter.js</strong> file in the <em>/dist</em> folder:</p>
+<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;./dist/low-pass-filter.js&quot;>&lt;/script>
+&lt;script>
+lowPassFilter.lowPassFilter(samples, 22050, 44100, 2);
+&lt;/script>
+</code></pre>
+<p>Or load it from the <a href="https://cdn.jsdelivr.net/npm/low-pass-filter">jsDelivr</a> CDN:</p>
+<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/low-pass-filter&quot;>&lt;/script>
+</code></pre>
+<p>Or load it from <a href="https://unpkg.com/low-pass-filter">unpkg</a>:</p>
+<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;https://unpkg.com/low-pass-filter&quot;>&lt;/script>
+</code></pre>
+<h3>Node</h3>
+<pre class="prettyprint source lang-javascript"><code>const lowPassFilter = require('low-pass-filter').lowPassFilter;
+lowPassFilter(samples, 22050, 44100, 2);
+</code></pre>
+<h2>API</h2>
+<pre class="prettyprint source lang-javascript"><code>
 /**
- * Apply LPF to an array of samples.
- * @param {!Array&lt;number>} samples The samples.
- * @param {!number} cutoff The cutoff frequency.
- * @param {!number} sampleRate The sample rate.
- * @param {!number} numChannels The number of channels.
+ * Low pass filter.
+ * @param {!Array&lt;number>|TypedArray} samples The samples.
+ * @param {number} cutoff The cutoff frequency.
+ * @param {number} sampleRate The sample rate.
+ * @param {number} numChannels The number of channels.
  */
-function lowPassFilter(samples, cutoff, sampleRate, numChannels) {}</code></pre><h3>References</h3><p>https://github.com/jiaaro/pydub/blob/master/pydub/effects.py#L187<br>http://stackoverflow.com/questions/13882038/implementing-simple-high-and-low-pass-filters-in-c</p>
-<h2>LICENSE</h2><p>Copyright (c) 2018 Rafael da Silva Rocha.</p>
+function lowPassFilter(samples, cutoff, sampleRate, numChannels) {}
+</code></pre>
+<h3>References</h3>
+<p>https://github.com/jiaaro/pydub/blob/master/pydub/effects.py#L187<br>
+http://stackoverflow.com/questions/13882038/implementing-simple-high-and-low-pass-filters-in-c</p>
+<h2>LICENSE</h2>
+<p>Copyright (c) 2018 Rafael da Silva Rocha.<br>
+Copyright (c) 2011 James Robert, http://jiaaro.com</p>
 <p>Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 &quot;Software&quot;), to deal in the Software without restriction, including
@@ -81,15 +120,126 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p></article>
 
 
 
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        index.js
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://github.com/rochars/low-pass-filter">https://github.com/rochars/low-pass-filter</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+            
+                <div class="description">The low-pass-filter module.</div>
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun May 06 2018 16:35:12 GMT-0300 (Hora oficial do Brasil) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
 <script src="scripts/linenumber.js"></script>
+
+
+
 </body>
 </html>

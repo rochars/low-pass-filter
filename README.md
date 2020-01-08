@@ -1,9 +1,6 @@
-# low-pass-filter
-Copyright (c) 2018 Rafael da Silva Rocha.  
-MIT License.
+# low-pass-filter 
 
-## About
-LPF. This is a audio FX.
+A low pass filter.
 
 ## Install
 ```
@@ -11,14 +8,41 @@ npm install low-pass-filter
 ```
 
 ## Use
+
+### Browser
+Use the **low-pass-filter.js** file in the */dist* folder:
+```html
+<script src="./dist/low-pass-filter.js"></script>
+<script>
+lowPassFilter.lowPassFilter(samples, 22050, 44100, 2);
+</script>
+```
+
+Or load it from the [jsDelivr](https://cdn.jsdelivr.net/npm/low-pass-filter) CDN:
+```html
+<script src="https://cdn.jsdelivr.net/npm/low-pass-filter"></script>
+```
+
+Or load it from [unpkg](https://unpkg.com/low-pass-filter):
+```html
+<script src="https://unpkg.com/low-pass-filter"></script>
+```
+
+### Node
+```javascript
+const lowPassFilter = require('low-pass-filter').lowPassFilter;
+lowPassFilter(samples, 22050, 44100, 2);
+```
+
+## API
 ```javascript
 
 /**
- * Apply LPF to an array of samples.
- * @param {!Array<number>} samples The samples.
- * @param {!number} cutoff The cutoff frequency.
- * @param {!number} sampleRate The sample rate.
- * @param {!number} numChannels The number of channels.
+ * Low pass filter.
+ * @param {!Array<number>|TypedArray} samples The samples.
+ * @param {number} cutoff The cutoff frequency.
+ * @param {number} sampleRate The sample rate.
+ * @param {number} numChannels The number of channels.
  */
 function lowPassFilter(samples, cutoff, sampleRate, numChannels) {}
 ```
@@ -28,7 +52,8 @@ https://github.com/jiaaro/pydub/blob/master/pydub/effects.py#L187
 http://stackoverflow.com/questions/13882038/implementing-simple-high-and-low-pass-filters-in-c
 
 ## LICENSE
-Copyright (c) 2018 Rafael da Silva Rocha.
+Copyright (c) 2018 Rafael da Silva Rocha.  
+Copyright (c) 2011 James Robert, http://jiaaro.com
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

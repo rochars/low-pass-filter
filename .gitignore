@@ -1,6 +1,5 @@
+*.DS_Store
 *.log
-.DS_Store
 .nyc_output
-coverage
 node_modules
-package-lock.json
+/dist

@@ -1,6 +1,5 @@
 /*
- * Copyright (c) 2018-2019 Rafael da Silva Rocha.
- * Copyright (c) 2011 James Robert, http://jiaaro.com
+ * Copyright (c) 2019 Rafael da Silva Rocha.
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -24,11 +23,13 @@
  */
 
 /**
- * @fileoverview The low-pass-filter module.
+ * @fileoverview Externs for low-pass-filter 1.0.0
  * @see https://github.com/rochars/low-pass-filter
+ * @externs
  */
 
-/** @module low-pass-filter */
+// The lowPassFilter module
+var lowPassFilter = {};
 
 /**
  * Low pass filter.
@@ -37,21 +38,5 @@
  * @param {number} sampleRate The sample rate.
  * @param {number} numChannels The number of channels.
  */
-export function lowPassFilter(samples, cutoff, sampleRate, numChannels) {
-    let rc = 1.0 / (cutoff * 2 * Math.PI);
-    let dt = 1.0 / sampleRate;
-    let alpha = dt / (rc + dt);
-    let last_val = [];
-    let offset;
-    for (let i=0; i<numChannels; i++) {
-        last_val[i] = samples[i];
-    }
-    for (let i=0; i<samples.length; i++) {
-        for (let j=0; j< numChannels; j++) {
-            offset = (i * numChannels) + j;
-            last_val[j] =
-                last_val[j] + (alpha * (samples[offset] - last_val[j]));
-            samples[offset] = last_val[j];
-        }
-    }
-}
+lowPassFilter.lowPassFilter = function(
+	samples, cutoff, sampleRate, numChannels) {};

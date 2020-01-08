@@ -1,14 +1,22 @@
-/*
- * Copyright (c) 2018 Rafael da Silva Rocha.
- * MIT License.
+/**
+ * Copyright (c) 2019 Rafael da Silva Rocha.
+ * https://github.com/rochars/low-pass-filter
+ *
  */
- 
-let lowPassFilter = require('../index.js');
 
-if (process.argv[3] == '--dist') {
-    require('browser-env')();let assert = require('assert');
-    require('../dist/low-pass-filter-min.js');
-    lowPassFilter = window.lowPassFilter;
+let lowPassFilter;
+
+// UMD bundle
+if (process.argv[3] == '--umd') {
+	console.log('umd tests');
+	lowPassFilter = require('../dist/low-pass-filter.js').lowPassFilter;
+
+// Source
+} else {
+	require = require("esm")(module);
+	global.module = module;
+	console.log('Source tests');
+	lowPassFilter = require('../index.js').lowPassFilter;
 }
 
 module.exports = lowPassFilter;

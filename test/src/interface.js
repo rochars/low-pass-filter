@@ -7,7 +7,7 @@ var assert = require("assert");
 
 describe("interface", function() {
 	
-    const lowPassFilter = require("../test/loader.js");
+    const lowPassFilter = require("../../test/loader.js");
 
     it("Should have the lowPassFilter function available", function() {
         const samples = [1,-1];
